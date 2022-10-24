@@ -162,9 +162,9 @@ if (!empty($menus))
         </div>
     </div>
     <div class="user-profile-plan">
-        @if( !Auth::user()->hasPermissionTo("dashboard_vendor_access") )
-            <a href=" {{ route("user.upgrade_vendor") }}">{{ __("Become a vendor") }}</a>
-        @endif
+{{--        @if( !Auth::user()->hasPermissionTo("dashboard_vendor_access") )--}}
+{{--            <a href=" {{ route("user.upgrade_vendor") }}">{{ __("Become a vendor") }}</a>--}}
+{{--        @endif--}}
     </div>
     <div class="sidebar-menu">
         <ul class="main-menu">

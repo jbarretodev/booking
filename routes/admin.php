@@ -6,6 +6,7 @@ Route::group(['prefix'=>'admin','middleware' => ['auth','dashboard']], function(
         $controller = ucfirst(htmlspecialchars($module));
         $class = "\\Modules\\$module\\Admin\\";
         $action = 'index';
+        //dd($class.$controller.'Controller@'.$action);
         if(class_exists($class.$controller.'Controller') && method_exists($class.$controller.'Controller',$action)){
             return App::call($class.$controller.'Controller@'.$action,[]);
         }
@@ -25,6 +26,7 @@ Route::group(['prefix'=>'admin','middleware' => ['auth','dashboard']], function(
         $action = $action ? $action : 'index';
         if(class_exists($class.$controller.'Controller') && method_exists($class.$controller.'Controller',$action)){
             $p = array_values(array_filter([$param1,$param2,$param3]));
+            //dd($class.$controller.'Controller@'.$action,$p);
             return App::call($class.$controller.'Controller@'.$action,$p);
 //            return App::make($class.$controller.'Controller')->callAction($action,$p);
         }

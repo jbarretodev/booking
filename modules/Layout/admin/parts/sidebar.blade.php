@@ -183,9 +183,20 @@ if (!empty($menus)){
     }));
 }
 
+$newMenu[] = $menus[0];
+$newMenu[] = $menus[7];
+$newMenu[] = $menus[9];
+$newMenu[] = $menus[10];
+$newMenu[] = $menus[13];
+unset($menus[14]['children'][17]); //removing settings app mobile
+$newMenu[] = $menus[14];
+$newMenu[] = $menus[15];
+$newMenu[] = $menus[16];
+$newMenu[] = $menus[17];
+
 ?>
 <ul class="main-menu">
-    @foreach($menus as $menuItem)
+    @foreach($newMenu as $menuItem)
         @php $menuItem['class'] .= " ".str_ireplace("/","_",$menuItem['url']) @endphp
         <li class="{{$menuItem['class']}}"><a href="{{ url($menuItem['url']) }}">
                 @if(!empty($menuItem['icon']))
