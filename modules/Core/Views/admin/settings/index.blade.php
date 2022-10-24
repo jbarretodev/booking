@@ -31,7 +31,6 @@
                     @csrf
 
                     @include('Language::admin.navigation')
-
                     <div class="lang-content-box">
                         @if(empty($group['view']))
                             @include ('Core::admin.settings.groups.'.$current_group)

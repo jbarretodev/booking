@@ -953,6 +953,7 @@ function is_enable_multi_lang(){
 }
 
 function is_enable_language_route(){
+    //App::isLocale('es');
     return (is_installed() and is_enable_multi_lang() and app()->getLocale() != setting_item('site_locale'));
 }
 

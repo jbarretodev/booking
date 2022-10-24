@@ -188,7 +188,14 @@ $newMenu[] = $menus[7];
 $newMenu[] = $menus[9];
 $newMenu[] = $menus[10];
 $newMenu[] = $menus[13];
+//dd($menus[14]['children']);
 unset($menus[14]['children'][17]); //removing settings app mobile
+unset($menus[14]['children'][2]); //removing Tour
+unset($menus[14]['children'][3]); //removing Tour
+unset($menus[14]['children'][4]); //removing Hotel
+unset($menus[14]['children'][5]); //removing Event
+unset($menus[14]['children'][6]); //removing News
+unset($menus[14]['children'][8]); //removing Enquiry Settings
 $newMenu[] = $menus[14];
 $newMenu[] = $menus[15];
 $newMenu[] = $menus[16];

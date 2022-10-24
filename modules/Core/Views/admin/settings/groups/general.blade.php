@@ -155,8 +155,7 @@
                         <label>{{__("Page for Homepage")}}</label>
                         <div class="form-controls">
                             <?php
-                            $template = !empty($settings['home_page_id']) ? \Modules\Page\Models\Page::find($settings['home_page_id']) : false;
-
+                            $template = false; //!empty($settings['home_page_id']) ? \Modules\Page\Models\Page::find($settings['home_page_id']) : false; ///
                             \App\Helpers\AdminForm::select2('home_page_id', [
                                 'configs' => [
                                     'ajax' => [

@@ -132,9 +132,17 @@ class PageController extends AdminController
         if ($q) {
             $query->where('title', 'like', '%' . $q . '%');
         }
+
         $res = $query->orderBy('id', 'desc')->limit(20)->get();
+
+        for($i = 0; $i < count($res); $i++){
+            if(stristr($res[$i], "car")){
+                $newRes[] = $res[$i];
+            }
+        }
+
         return response()->json([
-            'results' => $res
+            'results' => $newRes
         ]);
     }
 
