@@ -14,13 +14,13 @@
 		public function generate()
 		{
 			$items = json_decode($this->menu->items, true);
-
-            //$itemsSpecifics[] = $items[0];
+            //dd($items);
+            $itemsSpecifics[] = $items[0];
             $itemsSpecifics[] = $items[4];
 
 			if (!empty($itemsSpecifics)) {
 				echo '<ul class="main-menu menu-generated">';
-				$this->generateTree($itemsSpecifics);
+				$this->generateTree($items);
 				echo '</ul>';
 			}
 		}
